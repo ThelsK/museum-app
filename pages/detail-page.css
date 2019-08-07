@@ -24,3 +24,11 @@ img {
 .formSection {
     padding: 4px;
 }
+
+.comment {
+    background-color: #FFFF7F;
+}
+
+.warning {
+    color: #FF0000
+}
