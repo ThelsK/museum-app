@@ -11,15 +11,17 @@ function submitComment() {
     let name = document.getElementById("name").value
     let msg = document.getElementById("msg").value
 
-    // Trim the name and msg. Capitalize the first letter of the name.
+    // Trim the name and msg.
     name = name.trim()
     msg = msg.trim()
-    name = name[0].toUpperCase() + name.slice(1)
 
     // Validate the name and message.
     if (!validateComment(name, msg)) {
         return
     }
+
+    // Capitalize the first letter of the name.
+    name = name[0].toUpperCase() + name.slice(1)
 
     // Create new elements to display the name and message.
     const comment = document.createElement("section")
@@ -34,7 +36,7 @@ function submitComment() {
     // Apply the name and message to the new elements.
     h3.innerHTML = `${name} said:`
     warn.innerHTML = warnMsg
-    p.innerHTML = msg
+    p.innerHTML = `"${msg}"`
 
     // Add the name to the comment.
     comment.appendChild(h3)
