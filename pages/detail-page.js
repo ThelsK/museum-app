@@ -14,8 +14,12 @@ function submitComment() {
     p.innerHTML = msg
 
     // Add the new elements to the website.
-    comment.classList.add('comment')
+    comment.classList.add("comment")
     comment.appendChild(h3)
     comment.appendChild(p)
-    console.log(comment)
+    document.getElementById("comments").appendChild(comment)
+
+    // Empty the input elements.
+    document.getElementById("name").value = null
+    document.getElementById("msg").value = null
 }
