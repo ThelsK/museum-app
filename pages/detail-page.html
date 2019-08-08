@@ -9,12 +9,14 @@
         <link href="https://fonts.googleapis.com/css?family=Lacquer" rel="stylesheet">
         <script src="detail-page.js"></script>
     </head>
-    <body>
+    <body onload="loadPainting()">
         <main>
             <section id="content">
                 <h1>Thels' Museum Guide!</h1>
-                <h2>Some image about space</h2>
-                <img alt="An image of space" src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA15417_hires.jpg">
+                <h2 id="title"></h2>
+                <h3 id="author"></h3>
+                <p id="description">No image selected.</p>
+                <img id="image">
             </section>
 
             <section id="comments">

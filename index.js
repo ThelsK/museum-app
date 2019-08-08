@@ -324,7 +324,7 @@ const data = {
     ]
 }
 
-const paintingClasses = ['itemRTL', 'itemLTR']
+const paintingClasses = ["itemRTL", "itemLTR"]
 
 function displayAllPaintings() {
     const paintings = data.artObjects
@@ -344,7 +344,7 @@ function displayPainting(painting, num) {
     const paintingWidth = painting.webImage.width
     const paintingYear = paintingDescription.slice(paintingDescription.length - 4)
 
-    if (paintingWidth <= 500) {
+    if (paintingWidth <= 1500) {
         return
     }
     if (paintingAuthor.toLowerCase().includes("honthorst")) {
@@ -356,14 +356,14 @@ function displayPainting(painting, num) {
 
     const paintingClass = paintingClasses[document.getElementsByClassName("artObject").length % 2]
 
-    const mainDiv = document.createElement('div')
-    const textDiv = document.createElement('div')
-    const imageDiv = document.createElement('div')
-    const title = document.createElement('h2')
-    const author = document.createElement('h3')
-    const description = document.createElement('p')
-    const link = document.createElement('a')
-    const image = document.createElement('img')
+    const mainDiv = document.createElement("div")
+    const textDiv = document.createElement("div")
+    const imageDiv = document.createElement("div")
+    const title = document.createElement("h2")
+    const author = document.createElement("h3")
+    const description = document.createElement("p")
+    const link = document.createElement("a")
+    const image = document.createElement("img")
 
     mainDiv.classList.add(paintingClass)
     textDiv.classList.add("description")
