@@ -325,58 +325,52 @@ const data = {
     ]
 }
 
-// The possible classtypes to be used.
-const classTypes = ['itemLTR', 'itemRTL']
+const paintingClasses = ['itemRTL', 'itemLTR']
 
-function displayPaintings() {
-    console.log('Running!')
+function displayAllPaintings() {
     const paintings = data.artObjects
-    let classType = 0
-
     for (var i = 0; i < paintings.length; i++) {
-        const imageUrl = paintings[i].webImage.url
-        const imageTitle = paintings[i].title
-        const imageAuthor = paintings[i].principalOrFirstMaker
-        const imageDesc = paintings[i].longTitle // This is not actually the description! Needs to be replaced with the proper description at a later time.
-
-        // Loop through the various classtypes.
-        const imageClass = classTypes[classType]
-        classType++
-        if (classType >= classTypes.length) {
-            classType = 0
-        }
-
-        // Create the new elements and include them on the website.
-        const mainDiv = document.createElement('div')
-        const textDiv = document.createElement('div')
-        const imageDiv = document.createElement('div')
-        const title = document.createElement('h2')
-        const author = document.createElement('h3')
-        const description = document.createElement('p')
-        const link = document.createElement('a')
-        const image = document.createElement('img')
-
-        mainDiv.classList.add(imageClass)
-        textDiv.classList.add("description")
-        imageDiv.classList.add("image")
-        title.innerText = imageTitle
-        author.innerText = imageAuthor
-        description.innerText = imageDesc
-        link.setAttribute("href", `./pages/detail-page.html?painting=${i}`)
-        image.classList.add("artObject")
-        image.setAttribute("alt", `$(title), by $(author)`)
-        image.setAttribute("src", imageUrl)
-        
-        link.appendChild(image)
-        imageDiv.appendChild(link)
-        textDiv.appendChild(title)
-        textDiv.appendChild(author)
-        textDiv.appendChild(description)
-        mainDiv.appendChild(textDiv)
-        mainDiv.appendChild(imageDiv)
-        document.getElementById("gallery").appendChild(mainDiv)
+        const currentPainting = paintings[i]
+        displayPainting(currentPainting, i)
     }
+}
 
+function displayPainting(painting, num) {
+    const paintingUrl = painting.webImage.url
+    const paintingTitle = painting.title
+    const paintingAuthor = painting.principalOrFirstMaker
+    const paintingDescription = painting.longTitle // This is not actually the description! Needs to be replaced with the proper description at a later time.
+    const paintingClass = paintingClasses[num % 2]
+
+    const mainDiv = document.createElement('div')
+    const textDiv = document.createElement('div')
+    const imageDiv = document.createElement('div')
+    const title = document.createElement('h2')
+    const author = document.createElement('h3')
+    const description = document.createElement('p')
+    const link = document.createElement('a')
+    const image = document.createElement('img')
+
+    mainDiv.classList.add(paintingClass)
+    textDiv.classList.add("description")
+    imageDiv.classList.add("image")
+    image.classList.add("artObject")
+
+    title.innerText = paintingTitle
+    author.innerText = paintingAuthor
+    description.innerText = paintingDescription
+    link.href = `./pages/detail-page.html?painting=${num}`
+    image.alt = `$(paintingTitle) by $(paintingAuthor)`
+    image.src = paintingUrl
+    
+    link.appendChild(image)
+    imageDiv.appendChild(link)
+    textDiv.appendChild(title)
+    textDiv.appendChild(author)
+    textDiv.appendChild(description)
+    mainDiv.appendChild(textDiv)
+    mainDiv.appendChild(imageDiv)
+    document.getElementById("gallery").appendChild(mainDiv)
 }
 
 
