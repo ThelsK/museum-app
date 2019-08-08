@@ -325,13 +325,10 @@ const data = {
     ]
 }
 
-const paintingClasses = ['itemLTR', 'itemRTL']
+const paintingClasses = ['itemRTL', 'itemLTR']
 
 function displayAllPaintings() {
-    console.log('Running!')
     const paintings = data.artObjects
-    let classType = 0
-
     for (var i = 0; i < paintings.length; i++) {
         const currentPainting = paintings[i]
         displayPainting(currentPainting, i)
