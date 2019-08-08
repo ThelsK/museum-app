@@ -332,14 +332,15 @@ const inappropriate = /inappropriate|language/i
 
 function loadPainting() {
     const paintings = data.artObjects
+    console.log(window.location.search)
     const query = window.location.search.slice(1)
     const entries = query.split("&")
     for (let i = 0; i < entries.length; i++) {
+        console.log(entries[i])
         const pair = entries[i].split("=")
         if (pair[0] == "painting") {
             const currentPainting = paintings[pair[1]]
             displayPainting(currentPainting, pair[1])
-            return pair[1]
         }
     }
 }
@@ -449,7 +450,7 @@ function inappropriateComment(msg) {
     if (inappropriate.test(msg)) {
         return true
     }
-    
+
     // No inappropriate language was found.
     return false
 }
