@@ -1,4 +1,3 @@
-// Source data.
 const data = {
     elapsedMilliseconds: 0,
     count: 359,
@@ -340,7 +339,22 @@ function displayPainting(painting, num) {
     const paintingTitle = painting.title
     const paintingAuthor = painting.principalOrFirstMaker
     const paintingDescription = painting.longTitle // This is not actually the description! Needs to be replaced with the proper description at a later time.
-    const paintingClass = paintingClasses[num % 2]
+
+
+    const paintingWidth = painting.webImage.width
+    const paintingYear = paintingDescription.slice(paintingDescription.length - 4)
+
+    if (paintingWidth <= 500) {
+        return
+    }
+    if (paintingAuthor.toLowerCase().includes("honthorst")) {
+        return
+    }
+    if (paintingYear >= 1800) {
+        return
+    }
+
+    const paintingClass = paintingClasses[document.getElementsByClassName("artObject").length % 2]
 
     const mainDiv = document.createElement('div')
     const textDiv = document.createElement('div')
@@ -372,18 +386,3 @@ function displayPainting(painting, num) {
     mainDiv.appendChild(imageDiv)
     document.getElementById("gallery").appendChild(mainDiv)
 }
-
-
-/*
-<div>
-    <div>
-        <h2>A bit of space</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed elementum erat. Nam suscipit, augue eget eleifend tincidunt, elit massa posuere ex, et iaculis nunc lorem eget erat. In dapibus et est ut congue. Donec finibus, velit sed aliquam tincidunt, turpis est pellentesque urna, nec pharetra turpis purus porta sem. Aenean mattis rutrum erat vitae finibus. Maecenas at condimentum elit. Duis in nulla vel ex aliquam finibus. Aenean dictum quis augue vel porta. Ut in ipsum lacus. Nulla rhoncus in leo ut tincidunt. Praesent condimentum at justo vel ornare.</p>
-    </div>
-    <div>
-        <a">
-            <img alt="An image of space" src="https://images.pexels.com/photos/957010/milky-way-starry-sky-night-sky-star-957010.jpeg">
-        </a>
-    </div>
-</div>
-*/
