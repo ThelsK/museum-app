@@ -6,65 +6,10 @@
         <link href="https://fonts.googleapis.com/css?family=Lacquer" rel="stylesheet">
         <script src="index.js"></script>
     </head>
-    <body>
+    <body onload="displayPaintings()">
         <main>
             <h1>Thels' Museum Guide!</h1>
-            <section class="gallery">
-                <div class="itemLTR">
-                    <div class="description">
-                        <h2>A bit of space</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed elementum erat. Nam suscipit, augue eget eleifend tincidunt, elit massa posuere ex, et iaculis nunc lorem eget erat. In dapibus et est ut congue. Donec finibus, velit sed aliquam tincidunt, turpis est pellentesque urna, nec pharetra turpis purus porta sem. Aenean mattis rutrum erat vitae finibus. Maecenas at condimentum elit. Duis in nulla vel ex aliquam finibus. Aenean dictum quis augue vel porta. Ut in ipsum lacus. Nulla rhoncus in leo ut tincidunt. Praesent condimentum at justo vel ornare.</p>
-                    </div>
-                    <div class="image">
-                        <a href="./pages/detail-page.html">
-                            <img class="artObject" alt="An image of space" src="https://images.pexels.com/photos/957010/milky-way-starry-sky-night-sky-star-957010.jpeg">
-                        </a>
-                    </div>
-                </div>
-                <div class="itemRTL">
-                    <div class="description">
-                        <h2>Additional space</h2>
-                        <p>Donec et fermentum purus. Donec volutpat ligula eu metus mattis, placerat fringilla turpis condimentum. Suspendisse ut erat non lectus rhoncus consectetur. Sed aliquam justo lorem, ut tincidunt arcu convallis sit amet. Sed eu sagittis metus, vitae varius sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam ut sem sit amet metus interdum efficitur. Proin laoreet, velit vel vehicula egestas, nulla diam consequat nibh, id convallis magna tortor sit amet felis. Integer tincidunt iaculis arcu, nec dapibus risus sollicitudin eu. Vivamus id turpis nunc. Curabitur id dictum diam, interdum mollis augue.</p>
-                    </div>
-                    <div class="image">
-                        <a href="./pages/detail-page.html">
-                            <img class="artObject" alt="An image of space" src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA15417_hires.jpg">
-                        </a>
-                    </div>
-                </div>
-                <div class="itemLTR">
-                    <div class="description">
-                        <h2>More space</h2>
-                        <p>Praesent facilisis placerat erat dapibus porttitor. Etiam mi metus, luctus vitae sapien quis, aliquam blandit magna. Nullam quis velit euismod, porttitor nibh eu, pellentesque tellus. Donec faucibus viverra massa, non mattis ante tincidunt sit amet. Nullam nisl eros, egestas sit amet enim et, gravida elementum lorem. Quisque vel vestibulum nisl, in euismod leo. Proin tempus id urna at ultricies. Maecenas eu risus non enim venenatis blandit sed a erat. Duis convallis vehicula lectus nec sagittis. Aliquam mattis at lorem eget ornare.</p>
-                    </div>
-                    <div class="image">
-                        <a href="./pages/detail-page.html">
-                            <img class="artObject" alt="An image of space" src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22085_hires.jpg">
-                        </a>
-                    </div>
-                </div>
-                <div class="itemRTL">
-                    <div class="description">
-                        <h2>It's out there</h2>
-                        <p>Morbi dictum, neque nec pharetra commodo, velit massa bibendum massa, vitae ultricies ex diam vitae odio. Vestibulum laoreet tempus sapien vitae aliquam. Cras id quam dictum, ornare ipsum eu, aliquam neque. Morbi hendrerit magna a enim porta, quis interdum urna molestie. Quisque sit amet metus nec dui condimentum commodo. Nullam arcu magna, suscipit eu gravida in, interdum eu mi. Donec suscipit diam sed lacus aliquam, in tristique massa blandit. Ut vitae facilisis mi, sit amet fringilla magna. Proin interdum dignissim ligula, et consequat elit gravida et. Maecenas in lectus nisl. Aenean pulvinar hendrerit erat at accumsan. Quisque quis eros tellus. Donec consectetur finibus lectus id rutrum.</p>
-                    </div>
-                    <div class="image">
-                        <a href="./pages/detail-page.html">
-                            <img class="artObject" alt="An image of space" src="https://c.pxhere.com/photos/ce/66/galaxy_infinity_milky_way_orbit_space_stars-915272.jpg!d">
-                        </a>
-                    </div>
-                </div>
-                <div class="itemLTR">
-                    <div class="description">
-                        <h2>The last frontier</h2>
-                        <p>Proin ac velit commodo neque rutrum pellentesque quis sit amet felis. Quisque pharetra laoreet bibendum. Donec erat risus, lobortis in fringilla sit amet, consequat vel justo. Pellentesque euismod vel lorem ut fermentum. Nunc in lectus nec risus tincidunt aliquam. Fusce a tellus ac ipsum consectetur ultrices. Aliquam pretium massa quis finibus euismod. Etiam vel mi felis. Vivamus ac tristique nulla. Aenean volutpat, risus in tempor porta, ligula nibh mollis risus, quis tempus quam enim in odio. Praesent a felis blandit, pulvinar ante sit amet, volutpat erat. Sed laoreet eros nec mauris volutpat tristique. Phasellus sollicitudin, est ac sodales congue, odio ipsum hendrerit ligula, a varius ligula metus sit amet nisl. Proin sollicitudin porttitor iaculis.</p>
-                    </div>
-                    <div class="image">
-                        <a href="./pages/detail-page.html">
-                            <img class="artObject" alt="An image of space" src="https://cdn.pixabay.com/photo/2017/08/13/18/23/space-2638126_960_720.jpg">
-                        </a>
-                    </div>
-                </div>
+            <section id="gallery" class="gallery">
             </section>
         </main>
         <footer>
